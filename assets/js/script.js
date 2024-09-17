@@ -1,8 +1,8 @@
 // Global variables for map and event data
-let map;
+let map; 
 let eventMarkers = [];
 
-// Dummy event data
+
 const sportsEvents = [
     {
         name: 'Local Soccer Tournament',
@@ -62,3 +62,25 @@ function initMap() {
         `;
     });
 }
+
+// theme-toggle.js
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleSwitch = document.getElementById('theme-switch');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+        document.body.classList.toggle('dark-mode', currentTheme === 'dark');
+        toggleSwitch.checked = currentTheme === 'dark';
+    }
+
+    toggleSwitch.addEventListener('change', () => {
+        if (toggleSwitch.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});

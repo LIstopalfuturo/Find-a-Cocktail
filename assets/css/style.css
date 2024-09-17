@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* Header with background image */
@@ -20,14 +21,6 @@ h1 {
     font-size: 2.5rem;
     margin: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-h1::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 5px;
-    /* background-color: #ff8902;  */
 }
 
 /* Search Container */
@@ -105,14 +98,92 @@ h1::after {
     margin: 5px 0;
 }
 
-/* Footer for extra info */
+/* Footer with background image */
 footer {
-    background-color: #f9ac08;
-    color: #fff;
+    background-image: url('https://www.shutterstock.com/image-photo/collage-young-emotional-jumping-people-260nw-1675100677.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000000;
     text-align: center;
-    padding: 10px;
-    font-size: 0.9rem;
+    padding: 20px;
+    font-size: 25px;
     position: relative;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for footer */
+}
+
+/* Optional: Add overlay to improve text readability on the footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Black overlay with 30% opacity */
+    z-index: -1; /* Place overlay behind text */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
+
+body.dark-mode h1 {
+    color: #ddd;
+}
+
+body.dark-mode .search-container {
+    background-color: #444;
+}
+
+body.dark-mode #search-input {
+    border-color: #777;
+    background-color: #555;
+    color: #eee;
+}
+
+body.dark-mode #map {
+    border-bottom: 5px solid #444;
+}
+
+body.dark-mode #event-list {
+    background-color: #444;
+}
+
+body.dark-mode .event-item {
+    background-color: #555;
+    border: 2px solid #07f57a;
+}
+
+body.dark-mode .event-item h3 {
+    color: #eee;
+}
+
+body.dark-mode .event-item p {
+    color: #ccc;
+}
+
+body.dark-mode footer {
+    color: #ddd;
+}
+
+/* Theme Toggle Switch */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.theme-label {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.theme-switch {
+    cursor: pointer;
 }

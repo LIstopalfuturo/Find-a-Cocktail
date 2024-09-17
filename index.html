@@ -9,6 +9,12 @@
 <body>
     <h1>Local Sports Events</h1>
 
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <label for="theme-switch" class="theme-label">Dark Mode</label>
+        <input type="checkbox" id="theme-switch" class="theme-switch">
+    </div>
+
     <!-- Search Bar -->
     <div class="search-container">
         <input type="text" id="search-input" placeholder="Search for events...">
@@ -24,12 +30,13 @@
 
     <!-- Footer -->
     <footer>
-        Find and participate in your local sports events!
+        <strong>Find and participate in your local sports events!</strong>
     </footer>
 
+    <!-- JavaScript -->
     <script src="./assets/js/script.js"></script>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGK1W3nKeKGuK4CpNqTMEvKsshAxHFEnA&callback=initMap">
     </script>
 </body>
 </html>
