@@ -6,22 +6,59 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Header with background image */
 h1 {
     text-align: center;
-    padding: 20px;
-    background-color: #ff8902; /* Dark sports blue */
-    color: #fff;
+    padding: 100px 20px;  /* Adjust the padding to make space for the background image */
+    background-image: url('https://www.pgcps.org/globalassets/shared/images/herobanner/h-sports-various-sport-equipment-on-green-background-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 2px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    /* background-color: #ff8902;  */
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-input {
+    width: 80%;
+    max-width: 500px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ff8902;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+#search-input:focus {
+    border-color: #f79204;
 }
 
 /* Map container */
 #map {
     height: 70vh;
     width: 100%;
-    border-bottom: 5px solid #f79204; /* Add a sporty border under the map */
+    border-bottom: 5px solid #f79204;
 }
 
 /* Event List */
@@ -40,13 +77,12 @@ h1 {
     max-width: 600px;
     margin-bottom: 15px;
     padding: 15px;
-    border: 2px solid #07f57a; /* Match the sports blue */
+    border: 2px solid #07f57a;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     position: relative;
-    background-image: url('sports-bg.png'); /* Optional sports background */
     background-size: cover;
     background-blend-mode: overlay;
 }
@@ -67,23 +103,6 @@ h1 {
     color: #333;
     font-size: 1rem;
     margin: 5px 0;
-}
-
-/* Button for adding events (optional feature) */
-.add-event-btn {
-    background-color: #ff6600; /* Energetic sports orange */
-    color: #fff;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px;
-    text-transform: uppercase;
-}
-
-.add-event-btn:hover {
-    background-color: #cc5200;
 }
 
 /* Footer for extra info */
