@@ -24,18 +24,18 @@ const sportsEvents = [
     }
 ];
 
-// Initialize the map
+
 function initMap() {
-    // Map options
+    
     const mapOptions = {
         zoom: 12,
-        center: { lat: 40.73061, lng: -73.935242 }
+        center: { lat: 25.717396, lng: -80.278130 }
     };
 
-    // New map
+   
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    // Display sports events on the map
+ 
     sportsEvents.forEach(event => {
         const marker = new google.maps.Marker({
             position: { lat: event.lat, lng: event.lng },
