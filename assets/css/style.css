@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -7,10 +7,10 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header with background image */
+
 h1 {
     text-align: center;
-    padding: 100px 20px;  /* Adjust the padding to make space for the background image */
+    padding: 100px 20px;  
     background-image: url('https://www.pgcps.org/globalassets/shared/images/herobanner/h-sports-various-sport-equipment-on-green-background-banner.jpg');
     background-size: cover;
     background-position: center;
@@ -23,7 +23,6 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Search Container */
 .search-container {
     display: flex;
     justify-content: center;
@@ -47,14 +46,14 @@ h1 {
     border-color: #f79204;
 }
 
-/* Map container */
+
 #map {
     height: 70vh;
     width: 100%;
     border-bottom: 5px solid #f79204;
 }
 
-/* Event List */
+
 #event-list {
     padding: 20px;
     display: flex;
@@ -98,7 +97,7 @@ h1 {
     margin: 5px 0;
 }
 
-/* Footer with background image */
+
 footer {
     background-image: url('https://www.shutterstock.com/image-photo/collage-young-emotional-jumping-people-260nw-1675100677.jpg');
     background-size: cover;
@@ -111,10 +110,10 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for footer */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Optional: Add overlay to improve text readability on the footer */
+
 footer::before {
     content: '';
     position: absolute;
@@ -122,11 +121,11 @@ footer::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Black overlay with 30% opacity */
-    z-index: -1; /* Place overlay behind text */
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: -1; 
 }
 
-/* Dark Mode Styles */
+
 body.dark-mode {
     background-color: #333;
     color: #ddd;
@@ -171,7 +170,7 @@ body.dark-mode footer {
     color: #ddd;
 }
 
-/* Theme Toggle Switch */
+
 .theme-toggle {
     display: flex;
     align-items: center;

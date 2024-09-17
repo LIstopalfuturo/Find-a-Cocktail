@@ -1,4 +1,4 @@
-// Global variables for map and event data
+
 let map; 
 let eventMarkers = [];
 
@@ -53,7 +53,7 @@ function initMap() {
 
         eventMarkers.push(marker);
 
-        // Add event to the list
+      
         document.getElementById('event-list').innerHTML += `
             <div class="event-item">
                 <h3>${event.name}</h3>
@@ -63,7 +63,7 @@ function initMap() {
     });
 }
 
-// theme-toggle.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const toggleSwitch = document.getElementById('theme-switch');
