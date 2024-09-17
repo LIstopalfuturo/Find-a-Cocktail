@@ -1,0 +1,99 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #ff8902; /* Dark sports blue */
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Map container */
+#map {
+    height: 70vh;
+    width: 100%;
+    border-bottom: 5px solid #f79204; /* Add a sporty border under the map */
+}
+
+/* Event List */
+#event-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    margin-top: -10px;
+    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+}
+
+.event-item {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 2px solid #07f57a; /* Match the sports blue */
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    background-image: url('sports-bg.png'); /* Optional sports background */
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+
+.event-item:hover {
+    transform: scale(1.02);
+}
+
+.event-item h3 {
+    color: #00030a;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-item p {
+    color: #333;
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* Button for adding events (optional feature) */
+.add-event-btn {
+    background-color: #ff6600; /* Energetic sports orange */
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+.add-event-btn:hover {
+    background-color: #cc5200;
+}
+
+/* Footer for extra info */
+footer {
+    background-color: #f9ac08;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
