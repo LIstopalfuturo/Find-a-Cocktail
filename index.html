@@ -10,18 +10,17 @@
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-
   <body>
     <h1>Search for Cocktail Recipes</h1>
     <input type="text" id="cocktailInput" placeholder="Enter cocktail name" />
     <button onclick="searchCocktail()">Search</button>
+    <button onclick="clearSearchHistory()">Clear Search History</button>
+    <h2>Previous Search: <span id="lastSearch"></span></h2>
     <div id="cocktailResults"></div>
-
     <footer>
       <section>
         <div class="container">
           <div id="quote">Click the button to get a random quote.</div>
-          <!-- <button onclick="fetchQuote()">Get Quote</button> -->
           <button onclick="fetchQuote()" data-target="modal-ter" aria-haspopup="true">
             Get Quote
           </button>
@@ -38,10 +37,8 @@
         <section class="modal-card-body" id="modal-body">
           Quotes
         </section>
-        
       </div>
     </div>
-<script src="./assets/js/script.js"></script>
-    
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
