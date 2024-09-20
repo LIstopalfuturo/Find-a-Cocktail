@@ -1,188 +1,151 @@
-
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Verdana', sans-serif;
+    background-color: #1c1c1c;
+    color: #f2f2f2;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-
-h1 {
-    text-align: center;
-    padding: 100px 20px;  
-    background-image: url('https://www.pgcps.org/globalassets/shared/images/herobanner/h-sports-various-sport-equipment-on-green-background-banner.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 2.5rem;
-    margin: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.search-container {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-#search-input {
-    width: 80%;
-    max-width: 500px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 2px solid #ff8902;
-    border-radius: 5px;
-    outline: none;
-    transition: all 0.3s;
-}
-
-#search-input:focus {
-    border-color: #f79204;
-}
-
-
-#map {
-    height: 70vh;
-    width: 100%;
-    border-bottom: 5px solid #f79204;
-}
-
-
-#event-list {
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    margin-top: -10px;
-    box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
-}
-
-.event-item {
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 15px;
-    padding: 15px;
-    border: 2px solid #07f57a;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    position: relative;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2b2b2b, #3c3c3c);
+    background-image: url(../../../../../../Pictures/miami.jpg);
     background-size: cover;
-    background-blend-mode: overlay;
+    background-position: 50%;
 }
 
-.event-item:hover {
-    transform: scale(1.02);
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-family: -webkit-body;
+    
 }
 
-.event-item h3 {
-    color: #00030a;
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.event-item p {
-    color: #333;
+input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
     font-size: 1rem;
-    margin: 5px 0;
+    margin-right: 10px;
+    box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.5);
+    background-color: #3c3c3c;
+    color: #fff;
 }
 
+input[type="text"]::placeholder {
+    color: #aaa;
+}
+
+button {
+    margin-top: 24px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.7);
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+#cocktailResults {
+    margin-top: 30px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+   
+}
+
+#cocktailResults h3 {
+    font-size: 1.8rem;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+#cocktailResults img {
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.5);
+}
+
+#cocktailResults p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+    font-weight: bolder;
+    color: transparent;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+
+    padding: 10px; /* Adjust padding as needed */
+  
+    border-radius: 5px; /* Optional rounded corners */
+    background-image: linear-gradient(to right, red, orange, yellow);
+  
+    background-clip: text;
+}
+
+#cocktailResults ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cocktailResults ul li {
+    background-color: rgba(255, 204, 0, 0.1);
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    color: #f2f2f2;
+}
 
 footer {
-    background-image: url('https://www.shutterstock.com/image-photo/collage-young-emotional-jumping-people-260nw-1675100677.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #000000;
+    margin-top: 50px;
+    width: 100%;
+    background-color: #2b2b2b;
+    padding: 20px 0;
     text-align: center;
-    padding: 20px;
-    font-size: 25px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); 
-}
-
-
-footer::before {
-    content: '';
+    color: #f2f2f2;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); 
-    z-index: -1; 
+    bottom: 0;
 }
 
-
-body.dark-mode {
-    background-color: #333;
-    color: #ddd;
-}
-
-body.dark-mode h1 {
-    color: #ddd;
-}
-
-body.dark-mode .search-container {
-    background-color: #444;
-}
-
-body.dark-mode #search-input {
-    border-color: #777;
-    background-color: #555;
-    color: #eee;
-}
-
-body.dark-mode #map {
-    border-bottom: 5px solid #444;
-}
-
-body.dark-mode #event-list {
-    background-color: #444;
-}
-
-body.dark-mode .event-item {
-    background-color: #555;
-    border: 2px solid #07f57a;
-}
-
-body.dark-mode .event-item h3 {
-    color: #eee;
-}
-
-body.dark-mode .event-item p {
-    color: #ccc;
-}
-
-body.dark-mode footer {
-    color: #ddd;
-}
-
-
-.theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px;
-}
-
-.theme-label {
-    margin-right: 10px;
+footer button {
+    margin-top: 20px;
+    padding: 10px 20px;
     font-size: 1rem;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
 }
 
-.theme-switch {
-    cursor: pointer;
+footer button:hover {
+    background-color: #e6b800;
+}
+
+footer .container {
+    background-color: rgba(60, 60, 60, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    color: #f2f2f2;
+}
+
+footer #quote {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: "", sans-serif;
+    color: transparent;
+
+    background-image: linear-gradient(to right, red, orange, yellow);
+  
+    background-clip: text;
 }

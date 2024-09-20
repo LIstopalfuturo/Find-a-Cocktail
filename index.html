@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Sports Events</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    <h1>Local Sports Events</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocktail Recipe Finder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-    
-    <div class="theme-toggle">
-        <label for="theme-switch" class="theme-label">Dark Mode</label>
-        <input type="checkbox" id="theme-switch" class="theme-switch">
-    </div>
+  <body>
+    <h1>Search for Cocktail Recipes</h1>
+    <input type="text" id="cocktailInput" placeholder="Enter cocktail name" />
+    <button onclick="searchCocktail()">Search</button>
+    <div id="cocktailResults"></div>
 
-  
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search for events...">
-    </div>
-
-    
-    <div id="map"></div>
-
-    
-    <div id="event-list">
-      
-    </div>
-
-   
     <footer>
-        <strong>Find and participate in your local sports events!</strong>
+      <section>
+        <div class="container">
+          <div id="quote">Click the button to get a random quote.</div>
+          <!-- <button onclick="fetchQuote()">Get Quote</button> -->
+          <button onclick="fetchQuote()" data-target="modal-ter" aria-haspopup="true">
+            Get Quote
+          </button>
+        </div>
+      </section>
     </footer>
-
-   
-    <script src="./assets/js/script.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGK1W3nKeKGuK4CpNqTMEvKsshAxHFEnA&callback=initMap">
-    </script>
-</body>
+    <div class="modal" id="modal-ter">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Quotes</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body" id="modal-body">
+          Quotes
+        </section>
+        
+      </div>
+    </div>
+<script src="./assets/js/script.js"></script>
+    
+  </body>
 </html>

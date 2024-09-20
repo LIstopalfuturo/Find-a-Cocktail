@@ -1,86 +1,119 @@
 
-let map; 
-let eventMarkers = [];
+      const apiKey = "402b52e711msh085142f0c5d7c08p16647fjsnd6bb27b2bf05";
+      const apiHost = "the-cocktail-db.p.rapidapi.com";
 
+      async function searchCocktail() {
+        const cocktailName = document.getElementById("cocktailInput").value;
+        const url = `https://the-cocktail-db.p.rapidapi.com/search.php?s=${cocktailName}`;
+        const options = {
+          method: "GET",
+          headers: {
+            "X-RapidAPI-Key": apiKey,
+            "X-RapidAPI-Host": apiHost,
+          },
+        };
+        try {
+          const response = await fetch(url, options);
+          const data = await response.json();
+          const drinks = data.drinks;
+          if (drinks) {
+            displayCocktails(drinks);
+          } else {
+            document.getElementById("cocktailResults").innerHTML =
+              "<p>No results found.</p>";
+          }
+        } catch (error) {
+          console.error("Error fetching the cocktail data:", error);
+          document.getElementById("cocktailResults").innerHTML =
+            "<p>Error fetching data. Please try again.</p>";
+        }
+      }
 
-const sportsEvents = [
-    {
-        name: 'Local Soccer Tournament',
-        description: 'A fun tournament for all ages.',
-        lat: 40.73061,
-        lng: -73.935242
-    },
-    {
-        name: 'Community Basketball Game',
-        description: 'A casual 3v3 basketball event.',
-        lat: 40.741895,
-        lng: -73.989308
-    },
-    {
-        name: 'High School Baseball Championship',
-        description: 'Watch local schools compete for the title!',
-        lat: 40.752726,
-        lng: -73.977229
-    }
-];
-
-
-function initMap() {
+      function displayCocktails(drinks) {
+        let output = "<h2>Results:</h2>";
+        drinks.forEach((drink) => {
+          output += `
+                    <div>
+                        <h3>${drink.strDrink}</h3>
+                        <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" width="200">
+                        <p><strong>Instructions:</strong> ${drink.strInstructions}</p>
+                        <ul><strong>Ingredients:</strong>
+                `;
+          for (let i = 1; i <= 15; i++) {
+            const ingredient = drink[`strIngredient${i}`];
+            const measure = drink[`strMeasure${i}`];
+            if (ingredient) {
+              output += `<li>${ingredient} - ${measure || ""}</li>`;
+            }
+          }
+          output += `</ul></div>`;
+        });
+        document.getElementById("cocktailResults").innerHTML = output;
+      }
     
-    const mapOptions = {
-        zoom: 12,
-        center: { lat: 25.717396, lng: -80.278130 }
-    };
-
-   
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
- 
-    sportsEvents.forEach(event => {
-        const marker = new google.maps.Marker({
-            position: { lat: event.lat, lng: event.lng },
-            map: map,
-            title: event.name
-        });
-
-        const infoWindow = new google.maps.InfoWindow({
-            content: `<h3>${event.name}</h3><p>${event.description}</p>`
-        });
-
-        marker.addListener('click', () => {
-            infoWindow.open(map, marker);
-        });
-
-        eventMarkers.push(marker);
-
-      
-        document.getElementById('event-list').innerHTML += `
-            <div class="event-item">
-                <h3>${event.name}</h3>
-                <p>${event.description}</p>
-            </div>
-        `;
-    });
-}
-
-
+      async function fetchQuote() {
+        const url =
+          "https://quotes15.p.rapidapi.com/quotes/random/?language_code=en";
+        const options = {
+          method: "GET",
+          headers: {
+            "x-rapidapi-key":
+              "444bbe7291msh289be5985a3a910p1973c2jsnddfaf792b7b6",
+            "x-rapidapi-host": "quotes15.p.rapidapi.com",
+          },
+        };
+        try {
+          const response = await fetch(url, options);
+          const result = await response.json();
+          const quote = result.content;
+          document.getElementById("modal-body").innerText = quote;
+        } catch (error) {
+          console.error("Error fetching quote:", error);
+          document.getElementById("modal-body").innerText =
+            "Failed to fetch quote. Please try again.";
+        }
+      }
+    
 
 document.addEventListener('DOMContentLoaded', () => {
-    const toggleSwitch = document.getElementById('theme-switch');
-    const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme) {
-        document.body.classList.toggle('dark-mode', currentTheme === 'dark');
-        toggleSwitch.checked = currentTheme === 'dark';
+    // Functions to open and close a modal
+    function openModal($el) {
+      $el.classList.add('is-active');
     }
-
-    toggleSwitch.addEventListener('change', () => {
-        if (toggleSwitch.checked) {
-            document.body.classList.add('dark-mode');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.body.classList.remove('dark-mode');
-            localStorage.setItem('theme', 'light');
-        }
+  
+    function closeModal($el) {
+      $el.classList.remove('is-active');
+    }
+  
+    function closeAllModals() {
+      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+        closeModal($modal);
+      });
+    }
+  
+    // Add a click event on buttons to open a specific modal
+    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+      const modal = $trigger.dataset.target;
+      const $target = document.getElementById(modal);
+  
+      $trigger.addEventListener('click', () => {
+        openModal($target);
+      });
     });
-});
+  
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+  
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      if(event.key === "Escape") {
+        closeAllModals();
+      }
+    });
+  });
