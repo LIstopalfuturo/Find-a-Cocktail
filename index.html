@@ -3,28 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Sports Events</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Cocktail Recipe Finder</title>
 </head>
 <body>
-    <h1>Local Sports Events</h1>
-
-    <!-- Google Map -->
-    <div id="map"></div>
-
-    <!-- Event List -->
-    <div id="event-list">
-        <!-- Sports events will be dynamically added here -->
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        Find and participate in your local sports events!
-    </footer>
-
-    <script src="./assets/js/script.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    <h1>Search for Cocktail Recipes</h1>
+    <input type="text" id="cocktailInput" placeholder="Enter cocktail name">
+    <button onclick="searchCocktail()">Search</button>
+    <div id="cocktailResults"></div>
+    <script>
+        const apiKey = '402b52e711msh085142f0c5d7c08p16647fjsnd6bb27b2bf05';
+        const apiHost = 'the-cocktail-db.p.rapidapi.com';
+        async function searchCocktail() {
+            const cocktailName = document.getElementById('cocktailInput').value;
+            const url = `https://the-cocktail-db.p.rapidapi.com/search.php?s=${cocktailName}`;
+            const options = {
+                method: 'GET',
+                headers: {
+                    'X-RapidAPI-Key': apiKey,
+                    'X-RapidAPI-Host': apiHost
+                }
+            };
+            try {
+                const response = await fetch(url, options);
+                const data = await response.json();
+                const drinks = data.drinks;
+                if (drinks) {
+                    displayCocktails(drinks);
+                } else {
+                    document.getElementById('cocktailResults').innerHTML = '<p>No results found.</p>';
+                }
+            } catch (error) {
+                console.error('Error fetching the cocktail data:', error);
+                document.getElementById('cocktailResults').innerHTML = '<p>Error fetching data. Please try again.</p>';
+            }
+        }
+        function displayCocktails(drinks) {
+            let output = '<h2>Results:</h2>';
+            drinks.forEach(drink => {
+                output += `
+                    <div>
+                        <h3>${drink.strDrink}</h3>
+                        <img src="${drink.strDrinkThumb}" alt="${drink.strDrink}" width="200">
+                        <p><strong>Instructions:</strong> ${drink.strInstructions}</p>
+                        <ul><strong>Ingredients:</strong>
+                `;
+                for (let i = 1; i <= 15; i++) {
+                    const ingredient = drink[`strIngredient${i}`];
+                    const measure = drink[`strMeasure${i}`];
+                    if (ingredient) {
+                        output += `<li>${ingredient} - ${measure || ''}</li>`;
+                    }
+                }
+                output += `</ul></div>`;
+            });
+            document.getElementById('cocktailResults').innerHTML = output;
+        }
     </script>
 </body>
+<footer>
+    <style>
+        section {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #F0F0F0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        #quote {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+  <section>
+    <div class="container">
+        <div id="quote">Click the button to get a random quote.</div>
+        <button onclick="fetchQuote()">Get Quote</button>
+    </div>
+    <script>
+        async function fetchQuote() {
+            const url = 'https://quotes15.p.rapidapi.com/quotes/random/?language_code=en';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': '444bbe7291msh289be5985a3a910p1973c2jsnddfaf792b7b6',
+                    'x-rapidapi-host': 'quotes15.p.rapidapi.com'
+                }
+            };
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json(); // Parse JSON response
+                const quote = result.content; // Adjust according to the response structure
+                document.getElementById('quote').innerText = quote;
+            } catch (error) {
+                console.error('Error fetching quote:', error);
+                document.getElementById('quote').innerText = 'Failed to fetch quote. Please try again.';
+            }
+        }
+    </script>
+  </section>
+</footer>
 </html>
+
+
