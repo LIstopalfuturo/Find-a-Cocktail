@@ -22,11 +22,19 @@ How It Works
 	3.	Clear Search History: Click the “Clear Search History” button to remove stored search history.
 	4.	Random Quote: Click “Get Quote” to fetch a random motivational quote, displayed in a modal.
 
+
 UI Design
 
 	•	Responsive: The app is fully responsive, making it accessible across devices.
 	•	Dark Themed: The design features a dark background with vibrant accent colors for enhanced readability.
 	•	Dynamic Modals: The random quote is presented using a modal, which can be opened and closed interactively.
+
+
+[Live Link](URL)
+	
+	
+![Alt text](./mainpage.png)
+
 
 Setup
 
@@ -53,14 +61,14 @@ const apiHost = "the-cocktail-db.p.rapidapi.com";
 
 Contributions
 
-Matthew
+- Matthew Vogelsang
 
-Marquise
+- Marquise Jones
 
-Alberto
+- Alberto Garcia
 
-Gustavo
+- Gustavo Moran
 
 License
 
-This project is licensed under the MIT License.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
