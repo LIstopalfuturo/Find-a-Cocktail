@@ -50,11 +50,11 @@ button {
     margin-top: 30px;
     width: 80%;
     max-width: 600px;
-    height: 300px; /* Set a height for the scrollable area */
-    overflow-y: auto; /* Enable vertical scrolling */
-    background-color: rgba(0, 0, 0, 0.7); /* Optional: semi-transparent background */
-    border-radius: 10px; /* Rounded corners */
-    padding: 10px; /* Padding inside the results */
+    height: 300px; 
+    overflow-y: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px; 
+    padding: 10px; 
 }
 
 footer {
@@ -74,20 +74,20 @@ footer .container {
     color: #f2f2f2;
 }
 
-/* Media query for responsiveness */
+
 @media (max-width: 768px) {
     body {
-        height: auto; /* Allow body height to adjust */
+        height: auto; 
     }
     #cocktailResults {
-        height: 200px; /* Adjust height for smaller screens */
+        height: 200px; 
     }
 }
 
 #cocktailResults img {
-    display: block; /* Make the image a block element */
-    margin: 0 auto; /* Center the image horizontally */
-    border-radius: 10px; /* Keep your existing border-radius */
-    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.5); /* Keep your existing shadow */
-    width: 200px; /* Set a fixed width, if desired */
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.5); 
+    width: 200px; 
 }
