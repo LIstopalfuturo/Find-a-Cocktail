@@ -28,6 +28,13 @@ UI Design
 	•	Dark Themed: The design features a dark background with vibrant accent colors for enhanced readability.
 	•	Dynamic Modals: The random quote is presented using a modal, which can be opened and closed interactively.
 
+
+[Live Link](URL)
+	
+	
+![Alt text](./mainpage.png)
+
+
 Setup
 
 	1.	Clone the repository: 
@@ -53,14 +60,14 @@ const apiHost = "the-cocktail-db.p.rapidapi.com";
 
 Contributions
 
-Matthew
+- Matthew Vogelsang
 
-Marquise
+- Marquise Jones
 
-Alberto
+- Alberto Garcia
 
-Gustavo
+- Gustavo Moran
 
 License
 
-This project is licensed under the MIT License.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)

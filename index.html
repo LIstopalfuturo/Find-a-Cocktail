@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body>
-    
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocktail Recipe Finder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <h1>Search for Cocktail Recipes</h1>
+    <input type="text" id="cocktailInput" placeholder="Enter cocktail name" />
+    <button onclick="searchCocktail()">Search</button>
+    <button onclick="clearSearchHistory()">Clear Search History</button>
+    <h2>Previous Search: <span id="lastSearch"></span></h2>
+    <div id="cocktailResults"></div>
+    <footer>
+      <section>
+        <div class="container">
+          <div id="quote">Click the button to get a random quote.</div>
+          <button onclick="fetchQuote()" data-target="modal-ter" aria-haspopup="true">
+            Get Quote
+          </button>
+        </div>
+      </section>
+    </footer>
+    <div class="modal" id="modal-ter">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Quotes</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body" id="modal-body">
+          Quotes
+        </section>
+      </div>
+    </div>
     <script src="./assets/js/script.js"></script>
-</body>
+  </body>
 </html>
