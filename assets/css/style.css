@@ -20,8 +20,6 @@ h1 {
     margin-bottom: 20px;
     color: #ffcc00;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    font-family: -webkit-body;
-    
 }
 
 input[type="text"] {
@@ -36,10 +34,6 @@ input[type="text"] {
     color: #fff;
 }
 
-input[type="text"]::placeholder {
-    color: #aaa;
-}
-
 button {
     margin-top: 24px;
     padding: 10px 20px;
@@ -52,56 +46,15 @@ button {
     box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.7);
 }
 
-button:hover {
-    background-color: #e6b800;
-}
-
 #cocktailResults {
     margin-top: 30px;
     width: 80%;
     max-width: 600px;
-    text-align: center;
-   
-}
-
-#cocktailResults h3 {
-    font-size: 1.8rem;
-    color: #ffcc00;
-    margin-bottom: 10px;
-}
-
-#cocktailResults img {
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.5);
-}
-
-#cocktailResults p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #ffffff;
-    font-weight: bolder;
-    color: transparent;
-    background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-
-    padding: 10px; /* Adjust padding as needed */
-  
-    border-radius: 5px; /* Optional rounded corners */
-    background-image: linear-gradient(to right, red, orange, yellow);
-  
-    background-clip: text;
-}
-
-#cocktailResults ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#cocktailResults ul li {
-    background-color: rgba(255, 204, 0, 0.1);
-    padding: 5px 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-    color: #f2f2f2;
+    height: 300px; 
+    overflow-y: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    border-radius: 10px; 
+    padding: 10px; 
 }
 
 footer {
@@ -111,24 +64,6 @@ footer {
     padding: 20px 0;
     text-align: center;
     color: #f2f2f2;
-    position: absolute;
-    bottom: 0;
-}
-
-footer button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #ffcc00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.7);
-}
-
-footer button:hover {
-    background-color: #e6b800;
 }
 
 footer .container {
@@ -139,13 +74,20 @@ footer .container {
     color: #f2f2f2;
 }
 
-footer #quote {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: "", sans-serif;
-    color: transparent;
 
-    background-image: linear-gradient(to right, red, orange, yellow);
-  
-    background-clip: text;
+@media (max-width: 768px) {
+    body {
+        height: auto; 
+    }
+    #cocktailResults {
+        height: 200px; 
+    }
+}
+
+#cocktailResults img {
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.5); 
+    width: 200px; 
 }
