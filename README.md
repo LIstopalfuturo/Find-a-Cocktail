@@ -30,6 +30,10 @@ UI Design
 
 
 [Live Link](URL)
+
+
+[View My Google Presentation](https://docs.google.com/presentation/d/1sTyrkE_6QffkncVbYSM8liIkbHmWDloOPasnWTiz-Us/edit?usp=sharing)
+	
 	
 	
 ![Alt text](./mainpage.png)
