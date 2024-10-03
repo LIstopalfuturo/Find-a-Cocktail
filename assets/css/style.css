@@ -1,4 +1,5 @@
 
+
 *{
     margin: 0%;
     padding: 0%;
@@ -67,6 +68,7 @@ section{
     text-decoration: none;
     cursor: pointer;
 }
+
 
 body {
     font-family: 'Verdana', sans-serif;
