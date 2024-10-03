@@ -1,50 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocktail Recipe Finder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-<body>
-   <header>
-     <h1>Miami ALIVE</h1>
-   
-   
+  <body>
+    <h1>Search for Cocktail Recipes</h1>
+    <input type="text" id="cocktailInput" placeholder="Enter cocktail name" />
+    <button onclick="searchCocktail()">Search</button>
+    <div id="cocktailResults"></div>
 
-   </header>
-   <button id="openModal">Menu</button>
-
-
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Miami ALIVE </h2>
-        <p>This is a simple modal example.</p>
+    <footer>
+      <section>
+        <div class="container">
+          <div id="quote">Click the button to get a random quote.</div>
+          <!-- <button onclick="fetchQuote()">Get Quote</button> -->
+          <button onclick="fetchQuote()" data-target="modal-ter" aria-haspopup="true">
+            Get Quote
+          </button>
+        </div>
+      </section>
+    </footer>
+    <div class="modal" id="modal-ter">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Quotes</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body" id="modal-body">
+          Quotes
+        </section>
+        
+      </div>
     </div>
-</div>
- 
-   <main>
-
-   </main>
-
-  
-
-
-    <section>
-     
-
+<script src="./assets/js/script.js"></script>
     
-    
-
-     
-  
-    <script src="./assets/js/script.js"></script>
-    </section>
- 
-<footer>
-
-</footer>
-</body>
+  </body>
 </html>
