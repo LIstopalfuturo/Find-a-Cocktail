@@ -1,3 +1,24 @@
+
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("openModal");
+var span = document.getElementsByClassName("close")[0];
+
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+
 const apiKey = "402b52e711msh085142f0c5d7c08p16647fjsnd6bb27b2bf05";
 const apiHost = "the-cocktail-db.p.rapidapi.com";
 
@@ -54,7 +75,7 @@ function displayCocktails(drinks) {
         output += `<li>${ingredient} - ${measure || ""}</li>`;
       }
     }
-    output += `</ul></div>`;
+   output += `</ul></div>`;
   });
   document.getElementById("cocktailResults").innerHTML = output;
 }
@@ -73,4 +94,5 @@ function loadPreviousSearches() {
   if (savedDrinks && savedDrinks.length > 0) {
     displayCocktails(savedDrinks);
   }
+
 }
